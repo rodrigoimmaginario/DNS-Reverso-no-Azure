@@ -1,0 +1,8 @@
+
+Login-AzureRmAccount
+
+Get-AzureRmSubscription –SubscriptionName “ <nome da assinatura no azure> ” | Select-AzureRmSubscription
+ 
+$pip = Get-AzureRmPublicIpAddress -Name “<nome do objeto IP do servidor>” -ResourceGroupName “<nome do grupo de recurso>” 
+$pip.DnsSettings.ReverseFqdn = “xxx.xxxxxx.com.br.” 
+Set-AzureRmPublicIpAddress -PublicIpAddress $pip
